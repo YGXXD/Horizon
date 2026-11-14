@@ -100,6 +100,7 @@ def run_command(
         text=True,
         capture_output=capture_output,
         check=False,
+        encoding='utf-8'
     )
     if result.returncode != 0:
         if capture_output:
@@ -239,6 +240,7 @@ def load_conan_build_environment(
             text=True,
             capture_output=True,
             check=False,
+            encoding='utf-8'
         )
     else:
         environment_file = generators / "conanbuild.sh"
@@ -257,6 +259,7 @@ def load_conan_build_environment(
             text=True,
             capture_output=True,
             check=False,
+            encoding='utf-8'
         )
     if result.returncode != 0:
         if result.stderr:
